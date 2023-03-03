@@ -45,7 +45,7 @@ fun unarchive(toUnarchive: File) {
 
             val file = File(filePath)
             file.outputStream().use { fileOutputStream ->
-                var buffer = ByteArray(DEFAULT_BUFFER_SIZE)
+                val buffer = ByteArray(DEFAULT_BUFFER_SIZE)
                 while (remainingFileLength > 0) {
                     unarchiveInputStream.read(buffer, 0, min(DEFAULT_BUFFER_SIZE, remainingFileLength))
                     fileOutputStream.write(buffer, 0, min(DEFAULT_BUFFER_SIZE, remainingFileLength))
